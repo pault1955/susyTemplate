@@ -1,8 +1,6 @@
 var gulp = require('gulp'),
     gutil = require('gulp-util'),
     browserify = require('gulp-browserify'),
-    stylish = require('jshint-stylish'),
-    jshint = require('gulp-jshint'),
     w3cjs = require('gulp-w3cjs'),
     compass = require('gulp-compass'),
     connect = require('gulp-connect'),
@@ -40,10 +38,6 @@ htmlSources = [outputDir + '*.html'];
 
 gulp.task('js', function() {
   'use strict';
-
-  gulp.src('components/scripts/script.js')
-    .pipe(jshint('./.jshintrc'))
-    .pipe(jshint.reporter('jshint-stylish'));
 
   gulp.src(jsSources)
     .pipe(concat('script.js'))
